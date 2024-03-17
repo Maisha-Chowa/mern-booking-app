@@ -6,9 +6,11 @@ const Home = () => {
   const { data: hotels } = useQuery("fetchQuery", () =>
     apiClient.fetchMyHotels()
   );
+  console.log(hotels);
 
   const topRowHotels = hotels?.slice(0, 2) || [];
   const bottomRowHotels = hotels?.slice(2) || [];
+  console.log(topRowHotels);
 
   return (
     <div className="space-y-3">
